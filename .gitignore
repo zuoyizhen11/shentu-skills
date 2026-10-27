@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+_render/
+_extract/
+_dwgtext/
+*.whl
+.DS_Store
+Thumbs.db
