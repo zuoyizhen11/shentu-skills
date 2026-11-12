@@ -10,6 +10,7 @@
 | `review-opinion-delivery` | 把已有审查意见整理为规范交付件 | 证据齐全的 Word 交付稿 |
 | `drawing-review-cn` | 图纸会审（全专业自审） | 9 列问题清单 + 会审记录表 |
 | `tianzheng-dwg-parse` | 天正 T20/T8、T3 DWG 解析与图面审计 | 逐层设备统计、图面审计报告 |
+| `ppt-ing` | 可编辑 PPTX 制作、重设计、排版审查 | 原生对象 PPTX + 逐页渲染预览 |
 
 ## 各技能说明
 
@@ -62,12 +63,13 @@ pip install pymupdf python-docx ezdxf openpyxl pillow
 
 ## 许可证
 
-各技能分别遵循其原始许可证，均为 MIT：
+各技能分别遵循其原始许可证。除 `ppt-ing` 外均为 MIT：
 
 | 技能 | 版权 |
 |---|---|
 | `building-review`、`review-opinion-delivery` | Copyright (c) 2026 kangmaojian |
 | `drawing-review-cn` | Copyright (c) 2025 drawing-review-cn contributors |
 | `tianzheng-dwg-parse` | Copyright (c) 2026 hwdemtv |
+| `ppt-ing` | 移植版，**混合授权**：代码部分 MIT；规范文本源自上游，不随本仓授权，见 `ppt-ing/NOTICE.md` |
 
 各技能目录下的 `LICENSE` 文件为对应原始许可证全文。
