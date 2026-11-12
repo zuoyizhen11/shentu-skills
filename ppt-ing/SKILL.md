@@ -1,6 +1,6 @@
 ---
 name: ppt-ing
-description: 制作、重设计、扩展、审查「可编辑」PPTX 的完整工作流。含提案门、版式家族与字体角色契约、原生对象构建工具库（pptlib）、真实 PowerPoint 渲染 QA。触发词：做PPT、生成PPTX、改PPT、重设计PPT、可编辑PPT、提案deck、建筑/展览/品牌提案、审查PPT排版。
+description: 只在「可编辑原生 PPTX 的精细排版、视觉重设计、排版审查」时使用：坐标级控制、版式与字体契约、真实 PowerPoint 渲染 QA。触发词：重设计这份PPT、按提案级标准排版、审查PPT排版、可编辑PPTX、坐标级精修、提案deck。常规生成 PPT 请改用 workbuddy-pptx。
 agent_created: true
 ---
 
@@ -8,6 +8,21 @@ agent_created: true
 
 `github.com/cchhm8888-ctrl/ppt-ing` v5 的移植版。**上游是 Codex Skill，依赖一个这里没有的 MCP；
 本版把执行层换成 python-pptx + PowerPoint COM，设计契约原样保留。**
+
+## 分工边界（先看这里）
+
+同一台机器上还有 `workbuddy-pptx`、`ppt-two-step`、`guizang-ppt-skill`、`frontend-slides`。
+**默认不要抢活：**
+
+| 用户要什么 | 走哪个 |
+|---|---|
+| 常规做一份 PPT，内容为主 | `workbuddy-pptx` |
+| 先理清说服逻辑再动手 | `ppt-two-step`（它最终会调 `workbuddy-pptx`） |
+| 网页演示、横向翻页、要动效 | `guizang-ppt-skill` / `frontend-slides` |
+| **已有版式要重设计、要坐标级精修、要审排版、要提案级视觉** | 本技能 |
+
+判断口诀：**用户只要"一份 PPT"→ 让别人做；用户对"长什么样/能不能改"有具体要求 → 我来。**
+拿不准就问一句，不要直接开工。
 
 先明确一件事，别自我欺骗：
 - 上游的 `presentations:Presentations` 能力这里没有 → 用 `scripts/pptlib.py` 手写原生对象替代。
